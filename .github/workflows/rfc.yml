@@ -29,6 +29,7 @@ jobs:
         run: |
           for doc in IETF-*.md; do
             kramdown-rfc ${doc} > ${doc}.xml 2>> /tmp/result || true
+          done
           cat /tmp/result
           echo "result<<EOF" >> $GITHUB_OUTPUT
           cat /tmp/result >> $GITHUB_OUTPUT
